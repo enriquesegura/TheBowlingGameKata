@@ -26,10 +26,21 @@ function Game (){
         return [];
     };
     this.scoreByFrame = function(frame) {
-        if (frame == 'XXX') {
-            return 30;
+        if (frame[0] == 'X') {
+            return 10+this.numberPins(frame[1])+this.numberPins(frame[2]);
         }
-        return 0;
+        if (frame[1] == '/') {
+            return 10 + this.numberPins(frame[2]);
+        }
+
+        return this.numberPins(frame[0]) + this.numberPins(frame[1]);
+    };
+    this.numberPins = function(roll){
+         if(roll == 'X' || roll == '/'){
+             return 10;
+         }
+        if(roll == '-') return 0;
+        return parseInt(roll);
     };
 }
 
