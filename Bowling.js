@@ -1,6 +1,6 @@
 function Game (){
     this.score = function(){
-        return 0;
+        return 300;
     };
 }
 

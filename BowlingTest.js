@@ -18,8 +18,8 @@ describe('The Bowling game kata', function(){
     g = new Game();
   });
 
-  it('First test, the game is created and it has and score function that accept the rolls.' , function(){
-    rolls = '';
-    expect(g.score(rolls)).toBe(0);
+  it('Max score for perfect game', function() {
+    rolls = 'XXXXXXXXXXXX';
+    expect(g.score(rolls)).toBe(300);
   });
 });
