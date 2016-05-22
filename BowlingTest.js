@@ -38,4 +38,14 @@ describe('The Bowling game kata implementation', function(){
     rolls = 'XXXXXXXXXXXX';
     expect(g.frames(rolls)).toEqual(['XXX','XXX','XXX','XXX','XXX','XXX','XXX','XXX','XXX','XXX']);
   });
+
+  it('Split rolls into frames for an almost perfect game', function() {
+    rolls = 'XXXXXXXXXX-2';
+    expect(g.frames(rolls)).toEqual(['XXX','XXX','XXX','XXX','XXX','XXX','XXX','XXX','XX-','X-2']);
+  });
+
+  it('Split rolls into frames for regular game', function() {
+    rolls = '9-3/9-9-9-9-9-9-9-9-';
+    expect(g.frames(rolls)).toEqual(['9-','3/9','9-','9-','9-','9-','9-','9-','9-','9-']);
+  });
 });

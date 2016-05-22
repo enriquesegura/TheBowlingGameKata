@@ -9,12 +9,21 @@ function Game (){
     };
     this.frames = function(rolls) {
         var frames = [];
-        for (var i = 0; i < 10; i++){
-            if(rolls[i] == 'X'){
-                frames.push('XXX');
+        for (var i = 0; i < rolls.length; i++){
+            if(rolls[i] == 'X') {
+                frames.push(rolls.substring(i,i+3));
+            } else if (rolls[i+1] == '/') {
+                frames.push(rolls.substring(i,i+3));
+                i++;
+            } else {
+                frames.push(rolls.substring(i,i+2));
+                i++;
+            }
+            if (frames.length >= 10) {
+                return frames;
             }
         }
-        return frames;
+        return [];
     };
     this.scoreByFrame = function(frame) {
         if (frame == 'XXX') {
