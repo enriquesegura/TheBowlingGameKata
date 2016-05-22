@@ -1,11 +1,12 @@
 # TheBowlingGameKata
 
 ### Intro
-  * A game has ten frames.
-  * Each frame has until 2 rolls to knock down all the pins.
   * We want know the score of the game.
   * The score of the game is the addition of the score of his frames.
-  * Format of a game result.
+  * A game has ten frames.
+  * Each frame has until 2 rolls to knock down all the pins.
+  * The game will be defined in base of the result of all the rolls.
+  * Format of a roll in a game result.
     * We are using an string to show the result of each roll.
     * 'X': strike (10 pins in the first roll).
     * '/': spare (10 pins in 2 rolls).
