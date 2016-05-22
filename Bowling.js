@@ -8,7 +8,13 @@ function Game (){
         return points;
     };
     this.frames = function(rolls) {
-        return ['XXX','XXX','XXX','XXX','XXX','XXX','XXX','XXX','XXX','XXX'];
+        var frames = [];
+        for (var i = 0; i < 10; i++){
+            if(rolls[i] == 'X'){
+                frames.push('XXX');
+            }
+        }
+        return frames;
     };
     this.scoreByFrame = function(frame) {
         if (frame == 'XXX') {
