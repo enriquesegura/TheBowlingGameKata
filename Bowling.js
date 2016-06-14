@@ -4,6 +4,7 @@ function Game (){
         var points = 0;
         for (i in frames) {
             points += this.scoreByFrame(frames[i]);
+            console.log("\nFrame "+frames[i]+" ==> score: "+ points);
         }
         return points;
     };
@@ -34,6 +35,7 @@ function Game (){
         }
 
         return this.numberPins(frame[0]) + this.numberPins(frame[1]);
+
     };
     this.numberPins = function(roll){
          if(roll == 'X' || roll == '/'){

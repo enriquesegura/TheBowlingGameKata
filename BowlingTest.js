@@ -10,10 +10,6 @@ describe('The Bowling game kata', function(){
     g = new Game();
   });
 
-  it('Max score for perfect game', function() {
-    rolls = 'XXXXXXXXXXXX';
-    expect(g.score(rolls)).toBe(300);
-  });
 
   it('Score for a game with all spare', function() {
     rolls = '5/5/5/5/5/5/5/5/5/5/5';
@@ -50,5 +46,10 @@ describe('The Bowling game kata implementation', function(){
   it('Split rolls into frames for regular game', function() {
     rolls = '9-9-9-9-9-9-9-9-9-9-';
     expect(g.frames(rolls)).toEqual(['9-','9-','9-','9-','9-','9-','9-','9-','9-','9-']);
+  });
+
+  it('Max score for  non perfect game', function() {
+    rolls = 'XXXXXXXXXX2/';
+    expect(g.score(rolls)).toBe(284);
   });
 });
